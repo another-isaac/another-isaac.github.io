@@ -2,6 +2,8 @@
 
 body {
   min-height: 100vh;
+  /* background: #fff url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20'%3E%3Cpath d='M0 10 Q10 0 20 10 T40 10' fill='none' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+  background-attachment: fixed; */
 }
 
 ul[role="menu-bar"] {
@@ -62,10 +64,6 @@ ul[role="menu-bar"] {
 
 .post-list li {
   justify-content: space-between;
-}
-
-.rss-subscribe {
-  margin-top: 1.5rem;
 }
 
 .site-footer {
