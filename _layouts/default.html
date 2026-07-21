@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+{%- include head.html -%}
+<body>
+
+  <ul role="menu-bar">
+    <li role="menu-item"><a href="{{ "/" | relative_url }}"><span class="apple"></span></a></li>
+    <li role="menu-item"><a href="{{ "/" | relative_url }}">Home</a></li>
+    <li role="menu-item"><a href="{{ "/about/" | relative_url }}">About</a></li>
+    <li role="menu-item"><a href="{{ "/feed.xml" | relative_url }}">RSS</a></li>
+    {%- if site.github_username -%}
+    <li role="menu-item"><a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+    {%- endif -%}
+  </ul>
+
+  <main class="desktop">
+    <div class="window">
+      <div class="title-bar">
+        <button class="close" aria-label="Close"></button>
+        <h1 class="title">{{ page.title | default: site.title }}</h1>
+        <button class="resize" aria-label="Resize"></button>
+      </div>
+      <div class="separator"></div>
+      <div class="window-pane">
+        {{ content }}
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <p>{{ site.title }}{% if site.author %} &middot; {{ site.author }}{% endif %}{% if site.email %} &middot; <a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}</p>
+    </footer>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{{ content }}
+
+{%- if site.posts.size > 0 -%}
+<div class="separator"></div>
+<h2 class="heading">{{ page.list_title | default: "Posts" }}</h2>
+<ul class="post-list">
+  {%- for post in site.posts -%}
+  <li class="field-row">
+    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  </li>
+  {%- endfor -%}
+</ul>
+
+<p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+{%- endif -%}

@@ -1,0 +1,86 @@
+/* Site-specific tweaks layered on top of system.css. */
+
+body {
+  min-height: 100vh;
+}
+
+ul[role="menu-bar"] {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.window {
+  width: 100%;
+  max-width: 700px;
+}
+
+.window-pane a {
+  color: #000;
+}
+
+.window-pane img {
+  max-width: 100%;
+}
+
+.window-pane pre {
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 2px solid #000;
+}
+
+.window-pane code {
+  font-family: Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.85em;
+}
+
+.window-pane pre code {
+  font-size: 0.9em;
+}
+
+.post-meta {
+  color: #4a4a4a;
+  font-size: 0.85em;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.post-list {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+
+.post-list li {
+  justify-content: space-between;
+}
+
+.rss-subscribe {
+  margin-top: 1.5rem;
+}
+
+.site-footer {
+  color: #fff;
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 1.5rem;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  ul[role="menu-bar"] {
+    flex-wrap: wrap;
+  }
+}

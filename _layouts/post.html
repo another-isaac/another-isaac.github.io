@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<article class="post">
+  <p class="post-meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+    {%- if page.author %} &middot; {{ page.author }}{% endif -%}
+  </p>
+
+  {{ content }}
+</article>
