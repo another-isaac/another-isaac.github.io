@@ -5,3 +5,7 @@ permalink: /about/
 ---
 
 You have found yourself at a website still in its infancy. Destination unknown, yet refined with every step. Please do not spend a lot of time here.
+
+{%- if site.github_username -%}
+Find me on [GitHub](https://github.com/{{ site.github_username }}).
+{%- endif -%}

@@ -1,0 +1,7 @@
+# One row per plant/crop being tracked.
+- type: "tomato"
+  status: "happy as can be"
+- type: "cucumber"
+  status: "finally growing after 3 months"
+- type: "basil"
+  status: "5 whole leaves"

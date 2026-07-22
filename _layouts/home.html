@@ -3,15 +3,88 @@ layout: default
 ---
 {{ content }}
 
-{%- if site.posts.size > 0 -%}
-<div class="separator"></div>
-<h2 class="heading">{{ page.list_title | default: "Posts" }}</h2>
-<ul class="post-list">
-  {%- for post in site.posts -%}
-  <li class="field-row">
-    <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-  </li>
-  {%- endfor -%}
-</ul>
-{%- endif -%}
+<div class="dashboard">
+
+  <div class="dashboard-module dashboard-projects window">
+    <div class="title-bar">
+      <h2 class="title">Projects</h2>
+    </div>
+    <div class="separator"></div>
+    <div class="window-pane scroll-pane">
+      {%- if site.data.projects.size > 0 -%}
+      <ul class="project-list">
+        {%- for project in site.data.projects -%}
+        <li class="project-item">
+          <a class="project-title" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.title
+            }}</a>
+          <p class="project-blurb">{{ project.blurb }}</p>
+        </li>
+        {%- endfor -%}
+      </ul>
+      {%- else -%}
+      <p class="module-empty">No projects yet.</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="dashboard-module dashboard-music window">
+    <div class="title-bar">
+      <h2 class="title">Latest Jam</h2>
+    </div>
+    <div class="separator"></div>
+    <div class="window-pane">
+      {%- assign latest_jam = site.data.music | first -%}
+      {%- if latest_jam -%}
+      <div class="jam">
+        {%- if latest_jam.album_cover_url -%}
+        <img class="jam-cover" src="{{ latest_jam.album_cover_url }}" alt="{{ latest_jam.title }} cover art">
+        {%- endif -%}
+        <div class="jam-info">
+          <p class="jam-title">{{ latest_jam.title }}
+            <a class="jam-link" href="{{ latest_jam.youtube_url }}" target="_blank" rel="noopener noreferrer"
+              aria-label="Watch on YouTube">&#9654;</a>
+          </p>
+          {%- if latest_jam.description -%}
+          <p class="jam-description">{{ latest_jam.description }}</p>
+          {%- endif -%}
+          {%- if latest_jam.genre_tags -%}
+          <p class="genre-tags">{{ latest_jam.genre_tags | join: " · " }}</p>
+          {%- endif -%}
+        </div>
+      </div>
+      {%- else -%}
+      <p class="module-empty">No jams yet.</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="dashboard-module dashboard-garden window">
+    <div class="title-bar">
+      <h2 class="title">In My Garden</h2>
+    </div>
+    <div class="separator"></div>
+    <div class="window-pane scroll-pane">
+      {%- if site.data.garden.size > 0 -%}
+      <table class="garden-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in site.data.garden -%}
+          <tr>
+            <td>{{ row.type }}</td>
+            <td>{{ row.status }}</td>
+          </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+      {%- else -%}
+      <p class="module-empty">Nothing planted yet.</p>
+      {%- endif -%}
+    </div>
+  </div>
+
+</div>
