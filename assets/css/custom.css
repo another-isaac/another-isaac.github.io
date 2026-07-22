@@ -14,29 +14,12 @@ ul[role="menu-bar"] {
   border: 2px solid #000;
 }
 
-.desktop {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem 1rem 3rem;
-}
-
 .window {
   width: 100%;
   max-width: 700px;
 }
 
 /* Home dashboard: Projects / Music / Garden modules */
-
-.dashboard {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 1100px;
-  align-items: stretch;
-}
 
 .dashboard-module {
   display: flex;
@@ -49,76 +32,32 @@ ul[role="menu-bar"] {
   min-height: 0;
 }
 
-.dashboard-projects {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
-
-.dashboard-music {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.dashboard-garden {
-  grid-column: 2;
-  grid-row: 2;
-}
-
 .scroll-pane {
   overflow-y: auto;
   max-height: 420px;
-}
-
-.module-label {
-  font-size: 0.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #4a4a4a;
-  margin: 0 0 0.25rem;
 }
 
 .module-empty {
   color: #4a4a4a;
 }
 
-.jam {
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-
-.jam-cover {
-  width: 96px;
-  height: 96px;
-  object-fit: cover;
-  border: 2px solid #000;
-  flex-shrink: 0;
-}
-
-.jam-info {
-  min-width: 0;
-}
-
-.jam-title {
-  font-weight: bold;
-  margin: 0;
-}
-
 .jam-link {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: inline-block;
   color: #000;
   text-decoration: none;
-  font-size: 0.75em;
-  margin-left: 0.35em;
-  vertical-align: middle;
+  font-size: 1.6em;
+  line-height: 1;
 }
 
 .jam-link:hover {
   opacity: 0.6;
 }
 
-.jam-description,
-.music-description {
+/* Short descriptive text under a title (project blurbs, jam/music descriptions) */
+.entry-blurb {
   margin: 0.35rem 0 0;
   color: #333;
 }
@@ -129,13 +68,8 @@ ul[role="menu-bar"] {
   font-size: 0.8em;
 }
 
-.module-more {
-  display: block;
-  margin-top: 1rem;
-  color: #000;
-}
-
-.project-list {
+/* Unstyled list reset, shared by project and music listings */
+.entry-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -158,65 +92,7 @@ ul[role="menu-bar"] {
   color: #000;
 }
 
-.project-blurb {
-  margin: 0.35rem 0 0;
-  color: #333;
-}
-
-.garden-table {
-  width: 100%;
-}
-
-.garden-table th,
-.garden-table td {
-  text-align: start;
-}
-
-.music-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.music-item {
-  align-items: center;
-}
-
-.music-cover {
-  width: 48px;
-  height: 48px;
-  object-fit: cover;
-  border: 2px solid #000;
-  flex-shrink: 0;
-}
-
-.music-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.music-title {
-  color: #000;
-}
-
-.music-date {
-  color: #4a4a4a;
-  font-size: 0.85em;
-}
-
 @media (max-width: 800px) {
-  .dashboard {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  .dashboard-projects,
-  .dashboard-music,
-  .dashboard-garden {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
   .scroll-pane {
     max-height: 320px;
   }
@@ -245,34 +121,6 @@ ul[role="menu-bar"] {
 
 .window-pane pre code {
   font-size: 0.9em;
-}
-
-.post-meta {
-  color: #4a4a4a;
-  font-size: 0.85em;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.post-list {
-  list-style: none;
-  margin: 1rem 0;
-  padding: 0;
-}
-
-.post-list li {
-  justify-content: space-between;
-}
-
-.site-footer {
-  color: #fff;
-  text-align: center;
-  font-size: 0.8em;
-  margin-top: 1.5rem;
-}
-
-.site-footer a {
-  color: #fff;
 }
 
 @media (max-width: 480px) {
