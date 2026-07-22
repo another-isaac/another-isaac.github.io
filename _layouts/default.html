@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+{%- include head.html -%}
+
+<body>
+
+  <style>
+    .desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem 3rem;
+    }
+  </style>
+
+  <ul role="menu-bar">
+    <li role="menu-item" tabindex="0" aria-haspopup="false"><a href="{{ "/" | relative_url }}">Home</a></li>
+    <li role="menu-item" tabindex="0" aria-haspopup="false"><a href="{{ "/music/" | relative_url }}">Music</a></li>
+    <li role="menu-item" tabindex="0" aria-haspopup="false"><a href="{{ "/projects/" | relative_url }}">Projects</a>
+    </li>
+    <li role="menu-item" tabindex="0" aria-haspopup="false" style="margin-left: auto;"><a href="{{ "/about/" |
+        relative_url }}">About</a></li>
+  </ul>
+
+  <main class="desktop">
+    {%- if page.layout == "home" -%}
+    {{ content }}
+    {%- else -%}
+    <div class="window">
+      <div class="title-bar">
+        <h1 class="title">{{ page.title | default: site.title }}</h1>
+      </div>
+      <div class="separator"></div>
+      <div class="window-pane">
+        {{ content }}
+      </div>
+    </div>
+    {%- endif -%}
+  </main>
+
+</body>
+
+</html>

@@ -30,7 +30,6 @@ url: "another-isaac.github.io" # the base hostname & protocol for your site, e.g
 github_username:  another-isaac
 
 # Build settings
-theme: minima
 plugins:
   - jekyll-feed
 

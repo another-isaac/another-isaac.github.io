@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<style>
+  .post-meta {
+    color: #4a4a4a;
+    font-size: 0.85em;
+    display: block;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<article class="post">
+  <p class="post-meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
+    {%- if page.author %} &middot; {{ page.author }}{% endif -%}
+  </p>
+
+  {{ content }}
+</article>

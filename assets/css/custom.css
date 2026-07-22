@@ -1,0 +1,130 @@
+/* Site-specific tweaks layered on top of system.css. */
+
+body {
+  min-height: 100vh;
+  /* background: #fff url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='20'%3E%3Cpath d='M0 10 Q10 0 20 10 T40 10' fill='none' stroke='%23000' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+  background-attachment: fixed; */
+}
+
+ul[role="menu-bar"] {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  font-size: 1.1em;
+  border: 2px solid #000;
+}
+
+.window {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Home dashboard: Projects / Music / Garden modules */
+
+.dashboard-module {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.dashboard-module .window-pane {
+  flex: 1;
+  min-height: 0;
+}
+
+.scroll-pane {
+  overflow-y: auto;
+  max-height: 420px;
+}
+
+.module-empty {
+  color: #4a4a4a;
+}
+
+.jam-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  font-size: 1.6em;
+  line-height: 1;
+}
+
+.jam-link:hover {
+  opacity: 0.6;
+}
+
+/* Short descriptive text under a title (project blurbs, jam/music descriptions) */
+.entry-blurb {
+  margin: 0.35rem 0 0;
+  color: #333;
+}
+
+.genre-tags {
+  margin: 0.3rem 0 0;
+  color: #888;
+  font-size: 0.8em;
+}
+
+/* Unstyled list reset, shared by project and music listings */
+.entry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.project-title {
+  font-weight: bold;
+  color: #000;
+}
+
+@media (max-width: 800px) {
+  .scroll-pane {
+    max-height: 320px;
+  }
+}
+
+.window-pane a {
+  color: #000;
+}
+
+.window-pane img {
+  max-width: 100%;
+}
+
+.window-pane pre {
+  background: #000;
+  color: #fff;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 2px solid #000;
+}
+
+.window-pane code {
+  font-family: Monaco, Consolas, "Courier New", monospace;
+  font-size: 0.85em;
+}
+
+.window-pane pre code {
+  font-size: 0.9em;
+}
+
+@media (max-width: 480px) {
+  ul[role="menu-bar"] {
+    flex-wrap: wrap;
+  }
+}
