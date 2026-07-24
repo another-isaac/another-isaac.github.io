@@ -1,7 +1,16 @@
 # Add one entry per jam, newest first — the first entry is shown as "Latest Jam" on the home page.
+- title: "A Roller Skating Jam Named \"Saturdays\""
+  artist: "De La Soul"
+  post_date: 2026-07-24
+  release_year: 1991
+  genre_tags: ["Hip Hop", "Roller Skatin'"]
+  youtube_url: "https://www.youtube.com/watch?v=9S5lTgyfT2c"
+  album_cover_url: "https://i.discogs.com/E2A0J7TRTa-QQxUl68beKgNT1RfvM9Lf2DVa3Uv5rFQ/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTQ5NzY3/NjYtMTU0NjM4MzMz/Mi04MTIyLmpwZWc.jpeg"
+  description: "Get off the couch, lace 'em up, and celebrate your one day of freedom with a sample heavy jam. The hook will invade your brain."
 - title: "Let Love Flow On"
   artist: "Sonya Spence"
-  date: 2025-01-01
+  post_date: 2026-01-01
+  release_year: 1981
   genre_tags: ["Reggae", "Soul"]
   youtube_url: "https://www.youtube.com/watch?v=bu7NgdUvuk0"
   album_cover_url: "https://e.snmc.io/i/600/w/60256cad3651914f75f265f25c482bfa/3891895/Sonya%20Spence%20-%20Sings%20Love%2C%20Cover%20art.webp"

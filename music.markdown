@@ -57,11 +57,11 @@ permalink: /music/
   {%- for jam in site.data.music -%}
   <li class="field-row music-item">
     {%- if jam.album_cover_url -%}
-    <img class="music-cover" src="{{ jam.album_cover_url }}" alt="{{ jam.title }} cover art">
+    <img class="music-cover" src="{{ jam.album_cover_url }}" alt="{{ jam.title | escape }} cover art">
     {%- endif -%}
     <div class="music-info">
       <span class="music-title">{{ jam.title }}{% if jam.artist %} - <span class="music-artist">{{ jam.artist }}</span>{% endif %}</span>
-      {%- if jam.date -%}
+      {%- if jam.post_date -%}
       <span class="music-date">{{ jam.date | date: "%b %-d, %Y" }}</span>
       {%- endif -%}
       {%- if jam.description -%}

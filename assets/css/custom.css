@@ -17,6 +17,7 @@ ul[role="menu-bar"] {
 .window {
   width: 100%;
   max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Home dashboard: Projects / Music / Garden modules */
@@ -25,6 +26,7 @@ ul[role="menu-bar"] {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  min-width: 0;
 }
 
 .dashboard-module .window-pane {
@@ -60,6 +62,7 @@ ul[role="menu-bar"] {
 .entry-blurb {
   margin: 0.35rem 0 0;
   color: #333;
+  overflow-wrap: break-word;
 }
 
 .genre-tags {

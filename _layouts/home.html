@@ -97,7 +97,7 @@ layout: default
         <li class="project-item">
           <a class="project-title" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.title
             }}</a>
-          <p class="entry-blurb">{{ project.blurb }}</p>
+          <div class="entry-blurb">{{ project.blurb | markdownify }}</div>
         </li>
         {%- endfor -%}
       </ul>
@@ -117,7 +117,7 @@ layout: default
       {%- if latest_jam -%}
       <div class="jam-entry">
         {%- if latest_jam.album_cover_url -%}
-        <img class="jam-cover" src="{{ latest_jam.album_cover_url }}" alt="{{ latest_jam.title }} cover art">
+        <img class="jam-cover" src="{{ latest_jam.album_cover_url }}" alt="{{ latest_jam.title | escape }} cover art">
         {%- endif -%}
         <div class="jam-info">
           <p class="jam-title">{{ latest_jam.title }}
@@ -143,7 +143,9 @@ layout: default
 
   <div class="dashboard-module dashboard-garden window">
     <div class="title-bar">
+      <span class="title-bar-text">🌱</span>
       <h2 class="title">In My Garden</h2>
+      <span class="title-bar-text">🌱</span>
     </div>
     <div class="separator"></div>
     <div class="window-pane scroll-pane">
@@ -151,14 +153,14 @@ layout: default
       <table class="garden-table">
         <thead>
           <tr>
-            <th>Type</th>
+            <th>Plant</th>
             <th>Status</th>
           </tr>
         </thead>
         <tbody>
           {%- for row in site.data.garden -%}
           <tr>
-            <td>{{ row.type }}</td>
+            <td>{{ row.name }}</td>
             <td>{{ row.status }}</td>
           </tr>
           {%- endfor -%}
