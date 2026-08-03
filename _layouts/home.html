@@ -66,6 +66,7 @@ layout: default
   .garden-table th,
   .garden-table td {
     text-align: start;
+    padding: 0.5rem;
   }
 
   @media (max-width: 800px) {
@@ -97,7 +98,7 @@ layout: default
         <li class="project-item">
           <a class="project-title" href="{{ project.url }}" target="_blank" rel="noopener noreferrer">{{ project.title
             }}</a>
-          <p class="entry-blurb">{{ project.blurb }}</p>
+          <div class="entry-blurb">{{ project.blurb | markdownify }}</div>
         </li>
         {%- endfor -%}
       </ul>
@@ -117,7 +118,7 @@ layout: default
       {%- if latest_jam -%}
       <div class="jam-entry">
         {%- if latest_jam.album_cover_url -%}
-        <img class="jam-cover" src="{{ latest_jam.album_cover_url }}" alt="{{ latest_jam.title }} cover art">
+        <img class="jam-cover" src="{{ latest_jam.album_cover_url }}" alt="{{ latest_jam.title | escape }} cover art">
         {%- endif -%}
         <div class="jam-info">
           <p class="jam-title">{{ latest_jam.title }}
@@ -151,15 +152,15 @@ layout: default
       <table class="garden-table">
         <thead>
           <tr>
-            <th>Type</th>
-            <th>Status</th>
+            <th>Plant</th>
+            <th style="padding-left:1rem">Status</th>
           </tr>
         </thead>
         <tbody>
           {%- for row in site.data.garden -%}
           <tr>
-            <td>{{ row.type }}</td>
-            <td>{{ row.status }}</td>
+            <td>{{ row.name }}</td>
+            <td style="padding-left:1rem">{{ row.status }}</td>
           </tr>
           {%- endfor -%}
         </tbody>
