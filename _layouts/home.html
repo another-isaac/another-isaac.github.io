@@ -66,6 +66,7 @@ layout: default
   .garden-table th,
   .garden-table td {
     text-align: start;
+    padding: 0.5rem;
   }
 
   @media (max-width: 800px) {
@@ -143,9 +144,7 @@ layout: default
 
   <div class="dashboard-module dashboard-garden window">
     <div class="title-bar">
-      <span class="title-bar-text">🌱</span>
       <h2 class="title">In My Garden</h2>
-      <span class="title-bar-text">🌱</span>
     </div>
     <div class="separator"></div>
     <div class="window-pane scroll-pane">
@@ -154,14 +153,14 @@ layout: default
         <thead>
           <tr>
             <th>Plant</th>
-            <th>Status</th>
+            <th style="padding-left:1rem">Status</th>
           </tr>
         </thead>
         <tbody>
           {%- for row in site.data.garden -%}
           <tr>
             <td>{{ row.name }}</td>
-            <td>{{ row.status }}</td>
+            <td style="padding-left:1rem">{{ row.status }}</td>
           </tr>
           {%- endfor -%}
         </tbody>
